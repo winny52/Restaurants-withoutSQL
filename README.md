@@ -27,7 +27,7 @@ Contributions to the project are welcome! If you find any issues or have suggest
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 # Author
-winny Chelangat
+Winny Chelangat
 
 # Acknowledgments
 The project was inspired by the need to practice object-oriented programming concepts in Python.

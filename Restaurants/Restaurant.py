@@ -15,13 +15,13 @@ class Restaurant:
         return Review.all()
 
     def customers(self):
-        customer_set = set()  # To store unique customers
+        customer_set = set()  
         for review in self._reviews:
             customer_set.add(review.customer())
         return list(customer_set)
     
     def average_rating(self):
-        total = sum(review.rating() for review in self.get_reviews())  # Call get_reviews() method
+        total = sum(review.rating() for review in self.get_reviews())  
         if total == 0:
             return 0
         return total / len(self.get_reviews())
