@@ -1,7 +1,9 @@
+from Review import Review
+
 class Restaurant:
     def __init__(self, name):
         self._name = name
-        self.reviews =[]
+        self._reviews =[]
 
     def name(self):
         return self._name
@@ -10,10 +12,16 @@ class Restaurant:
         self._reviews.append(review)
 
     def get_reviews(self):
-        return self._reviews
+        return Review.all()
 
     def customers(self):
         customer_set = set()  # To store unique customers
         for review in self._reviews:
             customer_set.add(review.customer())
         return list(customer_set)
+    
+    def average_rating(self):
+        total = sum(review.rating() for review in self.get_reviews())  # Call get_reviews() method
+        if total == 0:
+            return 0
+        return total / len(self.get_reviews())

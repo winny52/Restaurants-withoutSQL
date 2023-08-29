@@ -1,3 +1,4 @@
+from Review import Review        
 class Customer:
     # Constructor
     def __init__(self, given_name, family_name):
@@ -32,19 +33,23 @@ class Customer:
         for review in self._reviews:
             restaurant_set.add(review.restaurant())
         return list(restaurant_set)
-# # Creating instances
-# customer1 = Customer("John", "Doe")
-# customer2 = Customer("Jane", "Smith")
+    
 
-# # Adding instances to the class variable
-# Customer.all_customers.append(customer1)
-# Customer.all_customers.append(customer2)
+    def num_reviews(self):
+        return len([review for review in Review.all() if review.customer() == self])
+    
+    @classmethod
+    def find_by_name(cls, full_name):
+        for customer in cls.all():
+            if customer.full_name() == full_name:
+                return customer
+        return None
+    
+    @classmethod
+    def find_all_by_given_name(cls, given_name):
+        matching_customers = []
+        for customer in cls.all():
+            if customer.given_name() == given_name:
+                matching_customers.append(customer)
+        return matching_customers
 
-# # Accessing customer data
-# print(customer1.given_name)  # John
-# print(customer2.full_name())  # Jane Smith
-
-# # Accessing all customer instances
-# all_customers = Customer.all()
-# for customer in all_customers:
-#     print(customer.full_name())
