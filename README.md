@@ -5,7 +5,7 @@ The "Restaurants" project is a simple Python program that simulates a system for
 To get started with the project, follow these steps:
 
 Clone the repository to your local machine:
-git clone https://github.com/your-username/restaurants-project.git
+git clone https://github.com/winny52/restaurants-project.git
 Navigate to the project directory:
 cd restaurants-project
 Run the main Python script to see the sample usage:
